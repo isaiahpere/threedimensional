@@ -8,8 +8,8 @@ import Social from "./workComponents/Social";
 const data = ["Web Design", "Development", "Product Design", "Social Media"];
 
 const Section = styled.div`
-  position: relative;
   height: 100vh;
+  width: 100vw;
   scroll-snap-align: center;
   scroll-behavior: smooth;
   display: flex;
@@ -18,19 +18,26 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  height: 100vh;
-  width: 1400px;
+  height: 100%;
+  width: 100%;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   justify-content: space-between;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const List = styled.ul`
@@ -41,7 +48,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 80px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.6);
@@ -72,11 +79,41 @@ const ListItem = styled.li`
       }
     }
   }
+
+  @media (min-width: 768px) {
+    font-size: 70px;
+  }
 `;
 
 const Right = styled.div`
   flex: 1;
   cursor: pointer;
+  position: relative;
+  /* display: none; */
+`;
+
+const RightSubContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CanvaContainer = styled.div`
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 768px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media (min-width: 1440px) {
+    width: 800px;
+    height: 800px;
+  }
 `;
 
 const Work = () => {
@@ -95,10 +132,14 @@ const Work = () => {
           </List>
         </Left>
         <Right>
-          {work === "Web Design" && <WebDesign />}
-          {work === "Development" && <Development />}
-          {work === "Product Design" && <ProductDesign />}
-          {work === "Social Media" && <Social />}
+          <RightSubContainer>
+            <CanvaContainer>
+              {work === "Web Design" && <WebDesign />}
+              {work === "Development" && <Development />}
+              {work === "Product Design" && <ProductDesign />}
+              {work === "Social Media" && <Social />}
+            </CanvaContainer>
+          </RightSubContainer>
         </Right>
       </Container>
     </Section>
