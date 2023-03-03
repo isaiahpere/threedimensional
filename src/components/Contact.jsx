@@ -24,7 +24,10 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  @media (min-width: 1024px) {
+    justify-content: flex-end;
+  }
 `;
 
 const Title = styled.h1`
@@ -32,10 +35,15 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-  width: 500px;
+  width: 100vw;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 `;
 
 const Input = styled.input`
@@ -50,6 +58,7 @@ const TextArea = styled.textarea`
   background-color: #e8e6e6;
   border: none;
   border-radius: 4px;
+  resize: vertical;
 `;
 
 const Button = styled.button`
@@ -65,6 +74,10 @@ const Button = styled.button`
 
 const Right = styled.div`
   flex: 1;
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 `;
 
 const Contact = () => {

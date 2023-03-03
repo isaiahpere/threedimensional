@@ -23,7 +23,7 @@ const App = () => {
       <Hero />
       <Who />
       <Work />
-      {/* <Contact /> */}
+      <Contact />
     </AppContainer>
   );
 };
