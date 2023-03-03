@@ -3,6 +3,7 @@ import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import Navbar from "../modules/navbar";
+import Button from "./global/Button";
 
 const Flex = styled.div`
   display: flex;
@@ -80,25 +81,6 @@ const Description = styled.p`
   text-align: center;
   @media (min-width: 768px) {
     font-size: 18px;
-  }
-`;
-
-const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
-  font-weight: 500;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  margin-bottom: 16px;
-
-  @media (min-width: 768px) {
-    width: 160px;
-    font-size: 16px;
-    margin: 0;
   }
 `;
 

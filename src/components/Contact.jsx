@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
+
 import Map from "./contactComponents/Map";
+import Button from "./global/Button";
 
 const Section = styled.div`
   height: 100vh;
@@ -61,17 +63,6 @@ const TextArea = styled.textarea`
   resize: vertical;
 `;
 
-const Button = styled.button`
-  background-color: #da4ea2;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 const Right = styled.div`
   flex: 1;
   display: none;
@@ -120,7 +111,7 @@ const Contact = () => {
               rows={10}
               name="message"
             />
-            <Button type="submit" value="Send">
+            <Button fullWidth type="submit" value="Send">
               Sent Message
             </Button>
             {success &&
