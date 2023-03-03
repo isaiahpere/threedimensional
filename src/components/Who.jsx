@@ -138,7 +138,7 @@ const Button = styled.button`
 
 const Who = () => {
   return (
-    <Section>
+    <Section id="who-section">
       <Container>
         <Left>
           <LeftSubContainer>

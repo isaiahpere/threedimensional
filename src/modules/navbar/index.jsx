@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
+import Navlink from "./Navlink";
+import Button from "../../components/global/Button";
+
 const Section = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  @media (min-width: 1024px) {
+    padding: 0 30px;
+  }
 `;
 
 const Container = styled.div`
@@ -43,10 +49,6 @@ const List = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
-  cursor: pointer;
-`;
-
 const Icons = styled.div`
   display: flex;
   align-items: center;
@@ -60,16 +62,6 @@ const Icon = styled.img`
   cursor: pointer;
 `;
 
-const Button = styled.button`
-  width: 100px;
-  padding: 10px;
-  background-color: #da4ea2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
 const Navbar = () => {
   return (
     <Section>
@@ -77,10 +69,9 @@ const Navbar = () => {
         <Links>
           <Logo src="./images/logo.png" />
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
+            <Navlink id="who-section">About Me</Navlink>
+            <Navlink id="work-section">Experience</Navlink>
+            <Navlink id="contact-section">Contact Me</Navlink>
           </List>
         </Links>
         <Icons>

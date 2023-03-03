@@ -120,7 +120,7 @@ const Work = () => {
   const [work, setWork] = useState("Web Design");
 
   return (
-    <Section>
+    <Section id="work-section">
       <Container>
         <Left>
           <List>

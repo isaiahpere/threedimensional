@@ -155,17 +155,18 @@ const Img = styled.img`
 
 const Hero = () => {
   return (
-    <Section>
+    <Section id="hero-section">
       <Navbar />
       <Container>
         <Left>
           <Title>Think. Make. Solve.</Title>
           <WhatWeDo>
             <Line src="./images/line.png" />
-            <Subtitle>What We Do</Subtitle>
+            <Subtitle>What I Do</Subtitle>
           </WhatWeDo>
           <Description>
-            We enjoy creating delightful, human-centered digital experience
+            I enjoy creating elegant applications that provide amazing user
+            experience.
           </Description>
           <Button>Learn More</Button>
         </Left>
