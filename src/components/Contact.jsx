@@ -82,6 +82,7 @@ const Contact = () => {
 
   const handleForm = (e) => {
     e.preventDefault(); // stop refresh
+    if (!name || !email || !message) return;
 
     emailjs
       .sendForm(

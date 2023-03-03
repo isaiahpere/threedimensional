@@ -11,7 +11,13 @@ const AppContainer = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("./images/bg.jpeg") center center;
+  /* background: url("./images/bg.jpeg") center center; */
+  background: linear-gradient(
+    216deg,
+    rgba(106, 138, 231, 1) 5%,
+    rgba(158, 75, 56, 1) 45%,
+    rgba(125, 190, 184, 1) 88%
+  );
   &::-webkit-scrollbar {
     display: none;
   }
