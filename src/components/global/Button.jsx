@@ -6,12 +6,19 @@ const CustomButton = styled.button`
   padding: 10px;
   font-size: 12px;
   font-weight: 500;
-  background-color: #da4ea2;
+  background-color: #201f20;
+  box-shadow: 1px 1px 10px 3px rgba(255, 255, 255, 0.2);
   ${(props) => props.fullWidth && "width: 100%;"}
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: #252525;
+    transform: scale(1.03);
+  }
 
   @media (min-width: 768px) {
     width: 160px;

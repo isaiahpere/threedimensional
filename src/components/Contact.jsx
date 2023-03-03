@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Map from "./contactComponents/Map";
 import Button from "./global/Button";
+import Toast from "./global/Toast";
 
 const Section = styled.div`
   height: 100vh;
@@ -74,7 +75,10 @@ const Right = styled.div`
 const Contact = () => {
   // ref
   const form = useRef();
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleForm = (e) => {
     e.preventDefault(); // stop refresh
@@ -96,6 +100,11 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+
+    // reset form values
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -103,19 +112,36 @@ const Contact = () => {
       <Container>
         <Left>
           <Form onSubmit={handleForm} ref={form}>
-            <Title>Contact Us</Title>
-            <Input type="text" placeholder="Name" name="name" />
-            <Input type="email" placeholder="Email" name="email" />
+            <Title>Contact Me</Title>
+            <Input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <TextArea
               placeholder="Write Your Message"
               rows={10}
               name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <Button fullWidth type="submit" value="Send">
               Sent Message
             </Button>
-            {success &&
-              "Your message has been sent. We'll get back to you soon. :)"}
+            {success && (
+              <Toast>
+                Your message has been sent. We'll get back to you soon. 😃
+              </Toast>
+            )}
           </Form>
         </Left>
         <Right>

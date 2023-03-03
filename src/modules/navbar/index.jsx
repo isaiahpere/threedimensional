@@ -31,6 +31,10 @@ const Links = styled.div`
 
 const Logo = styled.img`
   width: 80px;
+  transition: transform 0.3s ease-in;
+  &:hover {
+    transform: translateY(-5px);
+  }
   @media (min-width: 768px) {
     width: 100px;
   }
